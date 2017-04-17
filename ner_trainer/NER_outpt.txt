@@ -1,0 +1,152 @@
+Training to recognize 5 labels: 'location', 'district', 'sub_district', 'capital', 'area'
+Part I: train segmenter
+words in dictionary: 200000
+num features: 271
+now do training
+C:           20
+epsilon:     0.01
+num threads: 4
+cache size:  5
+max iterations: 2000
+loss per missed segment:  3
+C: 20   loss: 3 	0.428571
+C: 35   loss: 3 	0.428571
+C: 20   loss: 4.5 	0.428571
+C: 5   loss: 3 	0.428571
+C: 20   loss: 1.5 	0.342857
+C: 20   loss: 3.75 	0.428571
+C: 21.5   loss: 3 	0.428571
+C: 20   loss: 3.375 	0.428571
+C: 18.5   loss: 3 	0.428571
+C: 20   loss: 3.1875 	0.428571
+C: 20   loss: 2.9 	0.428571
+C: 20   loss: 2.93333 	0.428571
+C: 20   loss: 2.9533 	0.428571
+best C: 20
+best loss: 3
+num feats in chunker model: 4095
+train: precision, recall, f1-score: 1 1 1
+Part I: elapsed time: 41 seconds.
+
+Part II: train segment classifier
+now do training
+num training samples: 35
+C: 200   f-score: 0.625
+C: 400   f-score: 0.625
+C: 300   f-score: 0.625
+C: 100   f-score: 0.625
+C: 0.01   f-score: 0.5625
+C: 600   f-score: 0.625
+C: 1400   f-score: 0.625
+C: 3000   f-score: 0.625
+C: 5000   f-score: 0.625
+C: 2550   f-score: 0.625
+C: 1325   f-score: 0.625
+C: 712.5   f-score: 0.625
+C: 406.25   f-score: 0.625
+C: 253.125   f-score: 0.625
+C: 176.562   f-score: 0.625
+C: 138.281   f-score: 0.625
+C: 119.141   f-score: 0.625
+C: 109.57   f-score: 0.625
+C: 104.785   f-score: 0.625
+C: 102.393   f-score: 0.625
+C: 101.196   f-score: 0.625
+C: 100.598   f-score: 0.625
+C: 100.299   f-score: 0.625
+best C: 100.598
+test on train:
+13  0  0  0  0
+ 0  8  0  0  0
+ 0  0  5  0  0
+ 0  0  0  2  0
+ 0  0  0  0  7
+
+overall accuracy: 1
+Part II: elapsed time: 18446744052552 seconds.
+df.number_of_classes(): 5
+tags: ['location', 'district', 'sub_district', 'capital', 'area']
+
+এর মধ্যে উপজেলা সদরের প্রাণিসম্পদ অফিস প্রাঙ্গণ, বারইখালী চৌধুরী কাছারি, কুঠিবাড়ি, কাঁঠানতলা, নব্বইরশি বাসস্ট্যান্ড, বালুর রাস্তা, পুরাতন থানা রোডের বিভিন্ন অলিগলি, ফেরিঘাট, উপজেলা স্বাস্থ্য কমপ্লেক্সের আশপাশ এলাকা, সোলমবাড়িয়া বাসস্ট্যান্ড উল্লেখযোগ্য
+
+
+
+এর আগে রংপুরে জাপানের নাগরিক হত্যা, ময়মনসিংহের ত্রিশালে তিন জঙ্গি ছিনতাই, আশুলিয়ায় ব্যাংক ডাকাতি ও কনস্টেবল হত্যা, দিনাজপুরে এক ইতালীয়কে হত্যার চেষ্টা, রাজধানীতে প্রকাশককে হত্যার চেষ্টা এবং বগুড়ায় শিয়া মসজিদে মুয়াজ্জিন হত্যায় জেএমবি ও এবিটি জড়িত বলে পুলিশ বারবার দাবি করে আসছে
+
+
+Entities found: [(range(2, 3), 'district', 0.8000976459656761), (range(6, 7), 'district', 0.8000867323376483), (range(7, 8), 'sub_district', 0.8000985009213165), (range(11, 12), 'sub_district', 0.8001616839045251), (range(17, 18), 'district', 0.800154372702589), (range(22, 23), 'capital', 0.8013908597743868), (range(27, 28), 'district', 0.8000363595501562), (range(28, 30), 'location', 0.8001517999916615)]
+
+Number of entities detected: 8
+    district: রংপুরে
+    district: ময়মনসিংহের
+    sub_district: ত্রিশালে
+    sub_district: আশুলিয়ায়
+    district: দিনাজপুরে
+    capital: রাজধানীতে
+    district: বগুড়ায়
+    location: শিয়া মসজিদে
+
+
+এমনকি কিছুদিন আগে রাজধানীর কল্যাণপুরে ‘জাহাজ বিল্ডিং’-এ যে শ্বাসরুদ্ধকর অভিযানে ৯ জঙ্গি নিহত ও একজন আহত হয়, তারাও জেএমবির সদস্য বলে পুলিশের পক্ষ থেকে দাবি করা হয়
+
+
+Entities found: [(range(3, 4), 'capital', 0.8001540316054203), (range(4, 5), 'area', 0.8001549503840515), (range(5, 7), 'location', 0.8001252713921525)]
+
+Number of entities detected: 3
+    capital: রাজধানীর
+    area: কল্যাণপুরে
+    location: ‘জাহাজ বিল্ডিং’-এ
+
+
+তিনি আরো জানান, গ্রেপ্তারকৃতদের মধ্যে সিরাজ চাঁদপুরের মতলব উপজেলার সুজাতপাড়া এলাকার মো. ইসমাইলের ছেলে, মানিক বাঁশখালীর ছনুয়া কুতুবখালি এলাকার শাহ আলমের ছেলে, আল আমিন কুমিল্লার দাউদকান্দি উপজেলার তামটা মধ্যপাড়া এলাকার মো. আমির হোসেন সরকারের ছেলে, সাইফুল ইসলাম সুনামগঞ্জের সৈয়দপুর মধ্যপাড়া এলাকার মো. সিরাজুল ইসলামের ছেলে
+
+
+Entities found: [(range(6, 7), 'district', 0.8001769203450187), (range(7, 8), 'sub_district', 0.800115496631573), (range(9, 10), 'area', 0.8057529392654219), (range(15, 16), 'area', 0.8002852792208011), (range(17, 18), 'area', 0.800159116689887), (range(24, 25), 'district', 0.8000948359919289), (range(25, 26), 'sub_district', 0.8190900267733319), (range(27, 29), 'area', 0.8077816177998778), (range(37, 38), 'district', 0.8001381288287546), (range(38, 40), 'area', 0.8002476381060357)]
+
+Number of entities detected: 10
+    district: চাঁদপুরের
+    sub_district: মতলব
+    area: সুজাতপাড়া
+    area: বাঁশখালীর
+    area: কুতুবখালি
+    district: কুমিল্লার
+    sub_district: দাউদকান্দি
+    area: তামটা মধ্যপাড়া
+    district: সুনামগঞ্জের
+    area: সৈয়দপুর মধ্যপাড়া
+
+
+দাউদকান্দি কুমিল্লা প্রতিনিধি
+
+
+Entities found: [(range(0, 1), 'sub_district', 0.7999150331939185), (range(1, 2), 'district', 0.7983639849891218)]
+
+Number of entities detected: 2
+    sub_district: দাউদকান্দি
+    district: কুমিল্লা
+
+
+উপজেলার গৌরীপুর ইউনিয়নের হাটচান্দিনা গ্রামের কালাডুমুর নদীর পাড় থেকে মনিরুল ইসলাম পিন্টু ৪০ নামে এক প্রবাসীর লাশ উদ্ধার করেছে পুলিশ
+
+
+Entities found: [(range(1, 2), 'area', 0.8001909727206892), (range(3, 4), 'location', 0.8002072379365175)]
+
+Number of entities detected: 2
+    area: গৌরীপুর
+    location: হাটচান্দিনা
+
+
+কাগজ প্রতিবেদক, সিরাজগঞ্জ : জেলার কামারখন্দ উপজেলায় র‌্যাপিড অ্যাকশন ব্যাটালিয়ন র‌্যাব সদস্যদের সঙ্গে ‘বন্দুকযুদ্ধে’ দুই সন্ত্রাসী নিহত হয়েছে
+
+
+Entities found: [(range(0, 1), 'district', 0.09040661277805766), (range(1, 2), 'location', 0.14840251757405365), (range(2, 3), 'district', 0.1268560646023696), (range(3, 5), 'district', 0.09850486431769975), (range(5, 6), 'area', 0.07993497367490267), (range(6, 7), 'district', 0.08133062877439763), (range(9, 10), 'location', 0.1794302957580199), (range(13, 14), 'location', 0.12482277660949155)]
+
+Number of entities detected: 8
+    district: কাগজ
+    location: প্রতিবেদক,
+    district: সিরাজগঞ্জ
+    district: : জেলার
+    area: কামারখন্দ
+    district: উপজেলায়
+    location: ব্যাটালিয়ন
+    location: ‘বন্দুকযুদ্ধে’
